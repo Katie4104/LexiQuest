@@ -18,3 +18,7 @@ config/name="LexiQuest"
 run/main_scene="uid://yw28g16pqwmf"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gemini_godot/plugin.cfg")
