@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dn300yun1kxte"]
+
+[sub_resource type="GDScript" id="GDScript_c8184"]
+script/source = "extends Control
+
+func _on_timer_timeout() -> void:
+	print(\"Timer fired\")
+	get_tree().change_scene_to_file(\"res://login_screen.tscn\")
+	
+"
+
+[node name="SplashScreen" type="Control" unique_id=1945703312]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_c8184")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1273418867]
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 639.0
+color = Color(0.07642328, 0.8203584, 0.45173275, 1)
+
+[node name="WelcomeLabel" type="Label" parent="Background" unique_id=231043872]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = -10.0
+offset_bottom = 293.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 51
+text = "                
+
+                     Welcome to LexiQuest
+
+
+"
+
+[node name="WelcomeLabel2" type="Label" parent="Background" unique_id=1950754018]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -263.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 43
+text = "Where learning a new language
+                    
+                                               becomes an adventure........."
+
+[node name="Timer" type="Timer" parent="." unique_id=1793437895]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
