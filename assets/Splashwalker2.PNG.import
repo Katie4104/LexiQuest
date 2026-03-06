@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgh6mk2rvvdx5"
-path="res://.godot/imported/walker_splash.png-0852ca7bffbb0e18629cd1118fe52a8f.ctex"
+uid="uid://c5hrkjxbwd74p"
+path="res://.godot/imported/Splashwalker2.PNG-f103f6b24334d449d4f5858b8bf3a0cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://walker_splash.png"
-dest_files=["res://.godot/imported/walker_splash.png-0852ca7bffbb0e18629cd1118fe52a8f.ctex"]
+source_file="res://assets/Splashwalker2.PNG"
+dest_files=["res://.godot/imported/Splashwalker2.PNG-f103f6b24334d449d4f5858b8bf3a0cc.ctex"]
 
 [params]
 

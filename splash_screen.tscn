@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn300yun1kxte"]
+[gd_scene load_steps=14 format=3 uid="uid://dn300yun1kxte"]
 
 [ext_resource type="Texture2D" uid="uid://budi601cp18rl" path="res://splashBackground (2).png" id="1_ty3ja"]
+[ext_resource type="Texture2D" uid="uid://c5hrkjxbwd74p" path="res://assets/Splashwalker2.PNG" id="2_arguk"]
+[ext_resource type="Script" uid="uid://cifnsrvtsopda" path="res://walker.gd" id="3_74eti"]
 
 [sub_resource type="GDScript" id="GDScript_c8184"]
 script/source = "extends Control
@@ -11,7 +13,69 @@ func _on_timer_timeout() -> void:
 	
 "
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_74eti"]
+atlas = ExtResource("2_arguk")
+region = Rect2(0, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8bb4"]
+atlas = ExtResource("2_arguk")
+region = Rect2(377, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spqux"]
+atlas = ExtResource("2_arguk")
+region = Rect2(754, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nodus"]
+atlas = ExtResource("2_arguk")
+region = Rect2(1131, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arguk"]
+atlas = ExtResource("2_arguk")
+region = Rect2(0, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc6rp"]
+atlas = ExtResource("2_arguk")
+region = Rect2(377, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlpdx"]
+atlas = ExtResource("2_arguk")
+region = Rect2(754, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1scc"]
+atlas = ExtResource("2_arguk")
+region = Rect2(1131, 0, 377, 755)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ty3ja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74eti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8bb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spqux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nodus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arguk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc6rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlpdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1scc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="SplashScreen" type="Control"]
 layout_mode = 3
@@ -34,7 +98,7 @@ expand_mode = 1
 stretch_mode = 6
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.5
+wait_time = 5.0
 one_shot = true
 autostart = true
 
@@ -72,6 +136,9 @@ text = "                    Where learning a new language
                                                                                Loading..."
 
 [node name="walker" type="AnimatedSprite2D" parent="."]
+position = Vector2(654, 606)
+scale = Vector2(0.14, 0.117)
 sprite_frames = SubResource("SpriteFrames_ty3ja")
+script = ExtResource("3_74eti")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
