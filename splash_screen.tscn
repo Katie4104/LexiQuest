@@ -136,7 +136,7 @@ text = "                    Where learning a new language
                                                                                Loading..."
 
 [node name="walker" type="AnimatedSprite2D" parent="."]
-position = Vector2(654, 606)
+position = Vector2(696.99994, 606)
 scale = Vector2(0.14, 0.117)
 sprite_frames = SubResource("SpriteFrames_ty3ja")
 script = ExtResource("3_74eti")

@@ -1,78 +1,101 @@
-[gd_scene format=3 uid="uid://bymm56baa1osi"]
+[gd_scene load_steps=4 format=3 uid="uid://bymm56baa1osi"]
 
-[node name="LoginScreen" type="Control" unique_id=1401503714]
+[ext_resource type="Script" uid="uid://cck2n0na7g3" path="res://login_screen.gd" id="1_wplbs"]
+[ext_resource type="Texture2D" uid="uid://ckx56jp4kld3e" path="res://assets/login_screen.png" id="2_7xvqn"]
+
+[sub_resource type="FontVariation" id="FontVariation_7xvqn"]
+
+[node name="LoginScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 456.5985
-offset_top = -186.24205
-offset_right = 403.5985
-offset_bottom = -180.24207
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_wplbs")
 
-[node name="Background" type="ColorRect" parent="." unique_id=507191191]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.02584303
-anchor_top = 0.050828822
-anchor_right = 1.025843
-anchor_bottom = 1.0508288
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_7xvqn")
 
-[node name="TitleLabel" type="Label" parent="Background" unique_id=591842932]
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.24705882)
+
+[node name="TitleLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 351.5
-offset_right = -419.0
-offset_bottom = 134.0
+offset_left = 351.25
+offset_top = 37.0
+offset_right = -373.75
+offset_bottom = 159.0
 grow_horizontal = 2
-theme_override_colors/font_color = Color(0.45587856, 0.7151661, 0.11986842, 1)
+theme_override_colors/font_color = Color(0.9270439, 0.96156627, 0.9930453, 1)
 theme_override_colors/font_shadow_color = Color(0.6745098, 0.7254902, 0, 0)
 theme_override_font_sizes/font_size = 84
-text = "  Menu"
+text = " LexiQuest"
 
-[node name="MenuBox2" type="VBoxContainer" parent="Background/TitleLabel" unique_id=1645389499]
+[node name="LoginBox" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = -1
 anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -307.0
-offset_top = 267.0
-offset_right = 92.5
-offset_bottom = 354.0
+anchor_right = 1.0
+anchor_bottom = 0.70100003
+offset_left = 377.0
+offset_top = -130.0
+offset_right = -329.0
+offset_bottom = 44.751984
+grow_horizontal = 2
 grow_vertical = 2
 
-[node name="beginnerButton" type="Button" parent="Background/TitleLabel/MenuBox2" unique_id=156473326]
+[node name="UserNameLabel" type="Label" parent="LoginBox"]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 51
-text = "Intermediate"
+theme_override_colors/font_color = Color(0.85023755, 0.8257748, 0.852523, 1)
+theme_override_font_sizes/font_size = 35
+text = "Username:"
+horizontal_alignment = 1
 
-[node name="MenuBox2" type="VBoxContainer" parent="Background" unique_id=214607582]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 193.0
-offset_right = 443.0
-offset_bottom = 282.0
-
-[node name="intermediateButton" type="Button" parent="Background/MenuBox2" unique_id=1457554217]
+[node name="UserNameInput" type="LineEdit" parent="LoginBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 51
-text = "Beginner"
+placeholder_text = "Enter username"
+alignment = 1
 
-[node name="menuBox3" type="VBoxContainer" parent="Background" unique_id=890329906]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 452.0
-offset_right = 446.0
-offset_bottom = 527.0
-
-[node name="advancedButtton" type="Button" parent="Background/menuBox3" unique_id=617807829]
+[node name="PasswordLabel" type="Label" parent="LoginBox"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 51
-text = "Advance"
+theme_override_colors/font_color = Color(0.86409545, 0.9015517, 0.97265786, 1)
+theme_override_font_sizes/font_size = 32
+text = "Password:"
+horizontal_alignment = 1
+
+[node name="PasswordInput" type="LineEdit" parent="LoginBox"]
+layout_mode = 2
+placeholder_text = "Enter password"
+alignment = 1
+secret = true
+
+[node name="LoginButton" type="Button" parent="LoginBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Login"
+
+[node name="GuestButton" type="Button" parent="LoginBox"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_7xvqn")
+theme_override_font_sizes/font_size = 24
+text = "Continue as Guest"
