@@ -1,22 +1,15 @@
-extends  Control
+extends Control
 
-@onready var username_input = $LoginBox/UserNameInput
-@onready var password_input = $LoginBox/PasswordInput
+func _ready() -> void:
+	print("login screen loaded")
 
+func _on_guest_button_pressed() -> void:
+	print("Guest pressed")
+	var result = get_tree().change_scene_to_file("res://menu.tscn")
+	print("Result: ", result)
 
-func _on_LoginButton_pressed():
-
-		var username = username_input.text.strip_edges()
-		var password = password_input.text.strip_edges()
-
-		if username == "" or password == "":
-				print("Please enter a username and password.")
-				return
-
-		get_tree().change_scene_to_file("res://menu.tscn")
-
-
-func _on_GuestButton_pressed():
-
-		get_tree().change_scene_to_file("res://menu.tscn")
-		
+func _on_login_button_pressed() -> void:
+	print("Login pressed")
+	var result = get_tree().change_scene_to_file("res://menu.tscn")
+	print("Result: ", result)
+	

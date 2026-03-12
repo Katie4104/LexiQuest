@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1fngda2ql2ic"]
+[gd_scene load_steps=6 format=3 uid="uid://dq5yk37ckqfev"]
 
 [ext_resource type="Texture2D" uid="uid://bp0xgar4077nu" path="res://assets/LexiQuest_Menu.png" id="1_lti8b"]
 
@@ -10,7 +10,7 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4hy44"]
 
-[node name="GameMenu" type="Control"]
+[node name="menu" type="Control"]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15

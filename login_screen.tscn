@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bymm56baa1osi"]
+[gd_scene load_steps=10 format=3 uid="uid://1nk8v54eitt1"]
 
 [ext_resource type="Script" uid="uid://cck2n0na7g3" path="res://login_screen.gd" id="1_wplbs"]
 [ext_resource type="Texture2D" uid="uid://dc0o7jic82ops" path="res://assets/LexiQuest_login.png" id="2_7xvqn"]
@@ -36,19 +36,6 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_7xvqn")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -1.0
-offset_right = 2.0
-offset_bottom = -1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.02745098)
-
 [node name="LoginBox" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -61,6 +48,11 @@ offset_right = -327.0
 offset_bottom = 186.75198
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="LoginBox"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.02745098)
 
 [node name="UserNameLabel" type="Label" parent="LoginBox"]
 layout_mode = 2
@@ -103,3 +95,5 @@ theme_override_fonts/font = SubResource("FontVariation_7xvqn")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxFlat_pajja")
 text = "Continue as Guest"
+
+[connection signal="pressed" from="LoginBox/LoginButton" to="." method="_on_login_button_pressed"]
