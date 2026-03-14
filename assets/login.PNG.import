@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc0o7jic82ops"
-path="res://.godot/imported/LexiQuest_login.png-96569af86940988ccb066a322ad58d13.ctex"
+uid="uid://cbjconirrqvyu"
+path="res://.godot/imported/login.PNG-96f7347e012688d9882a0443503fb047.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/LexiQuest_login.png"
-dest_files=["res://.godot/imported/LexiQuest_login.png-96569af86940988ccb066a322ad58d13.ctex"]
+source_file="res://assets/login.PNG"
+dest_files=["res://.godot/imported/login.PNG-96f7347e012688d9882a0443503fb047.ctex"]
 
 [params]
 
