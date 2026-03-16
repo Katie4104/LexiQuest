@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://cigtpc3s1yfo3"]
 
 [ext_resource type="Texture2D" uid="uid://bjkn1sdgj2ukq" path="res://images/Pixel Art Top Down - Basic v1.2.3/Texture/TX Tileset Grass.png" id="1_n5ih4"]
-[ext_resource type="Script" uid="uid://c42jqjv2ywcoe" path="res://character_body_2d.gd" id="2_xtoqr"]
+[ext_resource type="Script" uid="uid://xp8r7yjapw1d" path="res://main.gd" id="2_xtoqr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1bvp3"]
 texture = ExtResource("1_n5ih4")

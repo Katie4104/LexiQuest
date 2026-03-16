@@ -1,7 +1,7 @@
 [gd_scene load_steps=67 format=4 uid="uid://yw28g16pqwmf"]
 
 [ext_resource type="Texture2D" uid="uid://it1ago165esq" path="res://images/used_images/Room_Builder_free_16x16.png" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://c42jqjv2ywcoe" path="res://character_body_2d.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://xp8r7yjapw1d" path="res://main.gd" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://bx1rvdfhmelw8" path="res://images/used_images/EnvironmentObjectsTileSheet.png" id="2_lquwl"]
 [ext_resource type="Texture2D" uid="uid://dolg160b5svt8" path="res://images/Modern tiles_Free/Characters_free/Adam_idle_anim_16x16.png" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bxra7t0fk2dmo" path="res://images/used_images/SecurityRopes.png" id="4_5vw27"]
