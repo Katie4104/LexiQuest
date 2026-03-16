@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bcpxu8picob4g"]
+[gd_scene load_steps=13 format=3 uid="uid://bcpxu8picob4g"]
 
 [ext_resource type="Script" uid="uid://cf2ou5glapkah" path="res://character_body_2d_npc.gd" id="1_xxcha"]
 [ext_resource type="Texture2D" uid="uid://dtfwqdn7c7yg1" path="res://images/used_images/Bob_idle_anim_16x16.png" id="2_kh24r"]
+[ext_resource type="PackedScene" uid="uid://bka6y545ft0tx" path="res://dialogue_box.tscn" id="3_kh24r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ul7y6"]
 atlas = ExtResource("2_kh24r")
@@ -79,6 +80,10 @@ shape = SubResource("CircleShape2D_xxcha")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_kh24r")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CharacterBody2D"]
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_kh24r")]
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_exited"]
