@@ -78,8 +78,6 @@ func load_accounts() -> Dictionary:
 		data["users"] = []
 
 	return data
-
-
 func save_accounts(data: Dictionary) -> void:
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_string(JSON.stringify(data, "\t"))

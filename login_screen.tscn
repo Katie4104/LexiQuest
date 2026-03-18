@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://1nk8v54eitt1"]
+[gd_scene load_steps=3 format=3 uid="uid://1nk8v54eitt1"]
 
+[ext_resource type="Script" uid="uid://cck2n0na7g3" path="res://login_screen.gd" id="1_7xvqn"]
 [ext_resource type="Texture2D" uid="uid://dkxht563c28pl" path="res://assets/login_sceen.png" id="1_wplbs"]
 
 [node name="login_screen" type="Control"]
@@ -10,26 +11,32 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+rotation = 0.0049891644
+script = ExtResource("1_7xvqn")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 341.0
-offset_top = 54.0
-offset_right = -381.0
-offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_wplbs")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
-layout_mode = 0
-offset_left = 51.0
-offset_top = 35.0
-offset_right = 377.0
-offset_bottom = 479.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -162.0
+offset_top = -173.0
+offset_right = 162.0
+offset_bottom = 173.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -39,7 +46,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(220, 60)
+custom_minimum_size = Vector2(220, 15)
 layout_mode = 2
 
 [node name="usernameLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
@@ -53,6 +60,7 @@ vertical_alignment = 1
 layout_mode = 2
 text = "Enter username"
 alignment = 1
+max_length = 20
 
 [node name="PasswordLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
@@ -63,31 +71,34 @@ vertical_alignment = 1
 
 [node name="passwordEdit" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
 layout_mode = 2
-text = "Enter password"
+placeholder_text = "***************"
 alignment = 1
+max_length = 20
 secret = true
 secret_character = "*"
 
 [node name="MarginContain" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(220, 30)
+custom_minimum_size = Vector2(220, 15)
 layout_mode = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 
 [node name="loginButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/CenterContainer"]
-custom_minimum_size = Vector2(180, 60)
+custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 
 [node name="logintext" type="Label" parent="NinePatchRect/VBoxContainer/CenterContainer/loginButton"]
+custom_minimum_size = Vector2(220, 60)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = 14.0
-offset_right = 2.0
-offset_bottom = -10.0
+offset_left = 1.0
+offset_top = 9.0
+offset_right = 1.0
+offset_bottom = -15.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 26
@@ -96,15 +107,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(220, 40)
+custom_minimum_size = Vector2(220, 20)
 layout_mode = 2
 
 [node name="CenterContainer2" type="CenterContainer" parent="NinePatchRect/VBoxContainer"]
-custom_minimum_size = Vector2(220, 30)
+custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 
 [node name="createAccountButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/CenterContainer2"]
-custom_minimum_size = Vector2(120, 50)
+custom_minimum_size = Vector2(220, 60)
 layout_mode = 2
 
 [node name="createText" type="Label" parent="NinePatchRect/VBoxContainer/CenterContainer2/createAccountButton"]
@@ -115,3 +126,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Create Account"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/CenterContainer/loginButton" to="." method="_on_login_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/CenterContainer2/createAccountButton" to="." method="_on_create_account_button_pressed"]
