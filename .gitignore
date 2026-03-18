@@ -1,4 +1,13 @@
-.DS_Store
-
-# Godot cache
+# Godot 4+ specific ignores
+# Godot 4+ specific ignores
 .godot/
+*.tmp
+*.uid
+
+# IDE and System files
+.DS_Store
+.vscode/
+.settings/
+.project
+.classpath
+bin/
