@@ -1,0 +1,144 @@
+[gd_scene load_steps=14 format=3 uid="uid://dn300yun1kxte"]
+
+[ext_resource type="Texture2D" uid="uid://budi601cp18rl" path="res://splashBackgroun.png" id="1_ty3ja"]
+[ext_resource type="Texture2D" uid="uid://c5hrkjxbwd74p" path="res://assets/Splashwalker2.PNG" id="2_arguk"]
+[ext_resource type="Script" path="res://walker.gd" id="3_74eti"]
+
+[sub_resource type="GDScript" id="GDScript_c8184"]
+script/source = "extends Control
+
+func _on_timer_timeout() -> void:
+	print(\"Timer fired\")
+	get_tree().change_scene_to_file(\"res://login_screen.tscn\")
+	
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74eti"]
+atlas = ExtResource("2_arguk")
+region = Rect2(0, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r8bb4"]
+atlas = ExtResource("2_arguk")
+region = Rect2(377, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spqux"]
+atlas = ExtResource("2_arguk")
+region = Rect2(754, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nodus"]
+atlas = ExtResource("2_arguk")
+region = Rect2(1131, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arguk"]
+atlas = ExtResource("2_arguk")
+region = Rect2(0, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc6rp"]
+atlas = ExtResource("2_arguk")
+region = Rect2(377, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlpdx"]
+atlas = ExtResource("2_arguk")
+region = Rect2(754, 0, 377, 755)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1scc"]
+atlas = ExtResource("2_arguk")
+region = Rect2(1131, 0, 377, 755)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ty3ja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74eti")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r8bb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spqux")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nodus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arguk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc6rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlpdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1scc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="SplashScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_c8184")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ty3ja")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -548.0
+offset_top = -252.0
+offset_right = 571.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="WelcomeLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.015686275, 0.105882354, 0.09411765, 1)
+theme_override_font_sizes/font_size = 51
+text = "                  Welcome to LexiQuest 
+
+
+"
+
+[node name="WelcomeLabel2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.015988704, 0.10435907, 0.09598314, 1)
+theme_override_font_sizes/font_size = 43
+text = "                    Where learning a new language
+                           becomes an adventure
+                                                                               Loading..."
+
+[node name="walker" type="AnimatedSprite2D" parent="."]
+position = Vector2(696.99994, 606)
+scale = Vector2(0.14, 0.117)
+sprite_frames = SubResource("SpriteFrames_ty3ja")
+script = ExtResource("3_74eti")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
