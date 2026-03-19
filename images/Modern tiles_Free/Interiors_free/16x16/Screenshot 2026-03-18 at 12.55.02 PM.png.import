@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:addons/gemini_godot/icon.png.import
-uid="uid://iaainiqo3tm3"
-path="res://.godot/imported/icon.png-2e2a9297b68480b94307a24c0b6a521a.ctex"
-========
-uid="uid://od101i3eh4ch"
-path="res://.godot/imported/icon.svg-40d11009b022ae281956dc38e8f8d85e.ctex"
->>>>>>>> Testing:images/icon.svg.import
+uid="uid://cwi1p3xky81k7"
+path="res://.godot/imported/Screenshot 2026-03-18 at 12.55.02 PM.png-54729215839cb68d33e6319c28ab27c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:addons/gemini_godot/icon.png.import
-source_file="res://addons/gemini_godot/icon.png"
-dest_files=["res://.godot/imported/icon.png-2e2a9297b68480b94307a24c0b6a521a.ctex"]
-========
-source_file="res://images/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-40d11009b022ae281956dc38e8f8d85e.ctex"]
->>>>>>>> Testing:images/icon.svg.import
+source_file="res://images/Modern tiles_Free/Interiors_free/16x16/Screenshot 2026-03-18 at 12.55.02 PM.png"
+dest_files=["res://.godot/imported/Screenshot 2026-03-18 at 12.55.02 PM.png-54729215839cb68d33e6319c28ab27c0.ctex"]
 
 [params]
 
