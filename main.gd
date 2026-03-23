@@ -30,7 +30,6 @@ func _physics_process(delta):
 	# Handle animations
 	update_animation(dir)
 
-
 func update_animation(dir: Vector2):
 
 	# If not moving → play idle animation
@@ -56,3 +55,5 @@ func update_animation(dir: Vector2):
 		else:
 			sprite.play("walk_up")
 			last_direction = "up"
+			
+			

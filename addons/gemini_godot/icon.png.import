@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:addons/gemini_godot/icon.png.import
-uid="uid://iaainiqo3tm3"
+uid="uid://b05efo5hfh70o"
 path="res://.godot/imported/icon.png-2e2a9297b68480b94307a24c0b6a521a.ctex"
-========
-uid="uid://od101i3eh4ch"
-path="res://.godot/imported/icon.svg-40d11009b022ae281956dc38e8f8d85e.ctex"
->>>>>>>> Testing:images/icon.svg.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:addons/gemini_godot/icon.png.import
 source_file="res://addons/gemini_godot/icon.png"
 dest_files=["res://.godot/imported/icon.png-2e2a9297b68480b94307a24c0b6a521a.ctex"]
-========
-source_file="res://images/icon.svg"
-dest_files=["res://.godot/imported/icon.svg-40d11009b022ae281956dc38e8f8d85e.ctex"]
->>>>>>>> Testing:images/icon.svg.import
 
 [params]
 
