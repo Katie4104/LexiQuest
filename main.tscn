@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dq34fx66ol5mq" path="res://images/Modern tiles_Free/Interiors_free/16x16/Interiors_free_16x16.png" id="4_kek77"]
 [ext_resource type="Texture2D" uid="uid://jqgtbpis77w4" path="res://images/Modern tiles_Free/Characters_free/Adam_run_16x16.png" id="4_lquwl"]
 [ext_resource type="PackedScene" uid="uid://bcpxu8picob4g" path="res://npc.tscn" id="8_5vw27"]
-[ext_resource type="PackedScene" uid="uid://bka6y545ft0tx" path="res://dialogue_box.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://bncwhvf5fjgup" path="res://db1.tscn" id="10_4c57u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a7gke"]
 texture = ExtResource("1_0xm2m")
@@ -3349,6 +3349,7 @@ tile_set = SubResource("TileSet_4c57u")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 z_index = 1
+position = Vector2(1, 64)
 motion_mode = 1
 script = ExtResource("1_ig7tw")
 
@@ -3365,8 +3366,6 @@ shape = SubResource("CircleShape2D_5vw27")
 [node name="FrontDeskNPC" parent="." instance=ExtResource("8_5vw27")]
 position = Vector2(2, -50)
 
-[node name="dialogue_box" parent="." instance=ExtResource("9_kek77")]
-
 [node name="DeskSecurityNPC" parent="." instance=ExtResource("8_5vw27")]
 position = Vector2(-169, -471)
 
@@ -3378,3 +3377,16 @@ position = Vector2(-32, -402)
 
 [node name="MetalDetectNPC2" parent="." instance=ExtResource("8_5vw27")]
 position = Vector2(33, -402)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DB1" parent="CanvasLayer" instance=ExtResource("10_4c57u")]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0

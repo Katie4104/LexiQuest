@@ -9,7 +9,12 @@ var last_direction: String = "down"
 func _physics_process(delta):
 
 	var dir := Vector2.ZERO
-
+	
+	var db = get_node_or_null("/root/main/DialogueBox")
+	if db and db.visible:
+		sprite.play("idle_" + last_direction)
+		return
+		
 	# Movement input
 	if Input.is_action_pressed("ui_right"):
 		dir.x += 1
