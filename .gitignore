@@ -11,3 +11,7 @@
 .project
 .classpath
 bin/
+
+
+*.import
+.import/
