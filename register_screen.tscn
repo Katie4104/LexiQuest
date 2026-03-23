@@ -1,0 +1,148 @@
+[gd_scene load_steps=3 format=3 uid="uid://cmudw42hi6l3f"]
+
+[ext_resource type="Script" uid="uid://c663h4dqkegv3" path="res://register_screen.gd" id="1_atkur"]
+[ext_resource type="Texture2D" uid="uid://wq00qh70xq04" path="res://assets/register_background.png" id="2_0p1im"]
+
+[node name="register_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_atkur")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = 1.0
+offset_right = -2.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_0p1im")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+custom_minimum_size = Vector2(350, 260)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -180.0
+offset_right = 173.0
+offset_bottom = 178.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Create Account"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(30, 15)
+layout_mode = 2
+
+[node name="UserLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Username"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="userEdit" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Enter username"
+alignment = 1
+max_length = 20
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(20, 10)
+layout_mode = 2
+
+[node name="PasswordLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Password"
+horizontal_alignment = 1
+
+[node name="PasswordEdit" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "**************"
+alignment = 1
+max_length = 18
+secret = true
+secret_character = "*"
+
+[node name="MarginContainer3" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(30, 10)
+layout_mode = 2
+
+[node name="ConfirmPasswordLabel" type="Label" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Confirm Password"
+horizontal_alignment = 1
+
+[node name="ConfirmPasswordEdit" type="LineEdit" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "******************"
+alignment = 1
+max_length = 20
+secret = true
+secret_character = "*"
+
+[node name="MarginContainer4" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(120, 10)
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+
+[node name="registerButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/CenterContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(150, 30)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="registerLabel" type="Label" parent="NinePatchRect/VBoxContainer/CenterContainer/registerButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Register"
+horizontal_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(120, 10)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="NinePatchRect/VBoxContainer"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+
+[node name="backButton" type="TextureButton" parent="NinePatchRect/VBoxContainer/CenterContainer2"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="backLabel" type="Label" parent="NinePatchRect/VBoxContainer/CenterContainer2/backButton"]
+custom_minimum_size = Vector2(120, 30)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Back"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/CenterContainer/registerButton" to="." method="_on_register_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/VBoxContainer/CenterContainer2/backButton" to="." method="_on_back_button_pressed"]
