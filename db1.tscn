@@ -1,20 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://bncwhvf5fjgup"]
+[gd_scene load_steps=3 format=3 uid="uid://bncwhvf5fjgup"]
 
 [ext_resource type="Script" uid="uid://sfh3301ktw6p" path="res://db_1.gd" id="1_4tjuv"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tjuv"]
+bg_color = Color(0.7490196, 0.7019608, 0.35686275, 1)
+
 [node name="DB1" type="PanelContainer" groups=["dialogue"]]
-custom_minimum_size = Vector2(600, 200)
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -250.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
 size_flags_vertical = 8
 script = ExtResource("1_4tjuv")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(600, 150)
 layout_mode = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 50
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -25,7 +38,18 @@ layout_mode = 2
 [node name="DLabel" type="RichTextLabel" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 bbcode_enabled = true
 
 [node name="ChoiceContainer" type="VBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="Translation" type="Label" parent="."]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4tjuv")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

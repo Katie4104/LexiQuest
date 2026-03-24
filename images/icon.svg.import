@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://cwi1p3xky81k7"
-=======
-uid="uid://bx2ymplcc01h0"
->>>>>>> ae8627dcd26b55b192a214fde4b5d7d5d85872a1
-path="res://.godot/imported/Screenshot 2026-03-18 at 12.55.02 PM.png-54729215839cb68d33e6319c28ab27c0.ctex"
+uid="uid://vp4gliejjis6"
+path="res://.godot/imported/icon.svg-40d11009b022ae281956dc38e8f8d85e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Modern tiles_Free/Interiors_free/16x16/Screenshot 2026-03-18 at 12.55.02 PM.png"
-dest_files=["res://.godot/imported/Screenshot 2026-03-18 at 12.55.02 PM.png-54729215839cb68d33e6319c28ab27c0.ctex"]
+source_file="res://images/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-40d11009b022ae281956dc38e8f8d85e.ctex"]
 
 [params]
 
@@ -42,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
