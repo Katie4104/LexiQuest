@@ -1,5 +1,5 @@
 extends AnimatedSprite2D
-var speed = 150.0
+var speed = 120.0
 func _ready():
 	play("default")
 func _process(delta):
