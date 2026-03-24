@@ -4,32 +4,37 @@ extends CharacterBody2D
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var can_move : bool = true
 var last_direction: String = "down"
 
 func _physics_process(delta):
 
-	var dir := Vector2.ZERO
+	if can_move:
+		var dir := Vector2.ZERO
 
-	# Movement input
-	if Input.is_action_pressed("ui_right"):
-		dir.x += 1
-	if Input.is_action_pressed("ui_left"):
-		dir.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		dir.y += 1
-	if Input.is_action_pressed("ui_up"):
-		dir.y -= 1
+		# Movement input
+		if Input.is_action_pressed("ui_right"):
+			dir.x += 1
+		if Input.is_action_pressed("ui_left"):
+			dir.x -= 1
+		if Input.is_action_pressed("ui_down"):
+			dir.y += 1
+		if Input.is_action_pressed("ui_up"):
+			dir.y -= 1
 
-	# Normalize movement so diagonals aren't faster
-	dir = dir.normalized()
+		# Normalize movement so diagonals aren't faster
+		dir = dir.normalized()
 
-	# Apply movement
-	velocity = dir * speed
-	move_and_slide()
+		# Apply movement
+		velocity = dir * speed
+		move_and_slide()
 
-	# Handle animations
-	update_animation(dir)
+		# Handle animations
+		update_animation(dir)
 
+	else:
+		velocity = Vector2.ZERO
+		move_and_slide()
 
 func update_animation(dir: Vector2):
 

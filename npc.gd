@@ -1,30 +1,48 @@
-extends Node2D
+extends CharacterBody2D
 
-@export var npc_name: String = "Guard"
-@export var question: String = "Translate 'Hola' to English:"
-@export var choices: Array[String] = ["Goodbye", "Hello", "Apple"]
-@export var correct_idx: int = 1
+@export_enum("Talk", "Quiz") var interaction_mode: String = "Talk"
+@export var character_name: String = "NPC"
+@export var dialogue_lines: Array[String] = ["Hello!"]
+
+@export var question: String = ""
+@export var choices: Array[String] = []
+@export var correct_idx: int = 0
+@export var outro_dialogue: Array[String] = ["¡Buen viaje!"]
 
 func _on_body_entered(body):
 	if body.name == "Player":
-		trigger_quiz()
+		body.can_move = false 
+		
+		# Ensure your DB1 node is in the "dialogue" group
+		var db = get_tree().get_first_node_in_group("dialogue")
+		if not db: return
 
-func trigger_quiz():
+		db.start_dialogue(character_name, dialogue_lines)
+		
+		if interaction_mode == "Quiz":
+			if not db.dialogue_finished.is_connected(_on_intro_finished):
+				db.dialogue_finished.connect(_on_intro_finished, CONNECT_ONE_SHOT)
+
+func _on_intro_finished():
 	var db = get_tree().get_first_node_in_group("dialogue")
 	if db:
-		db.start_quiz(npc_name, question, choices, correct_idx)
-		
-		# Connect the answer signal if not already connected
+		db.start_quiz(character_name, question, choices, correct_idx)
 		if not db.answer_selected.is_connected(_on_answer_received):
 			db.answer_selected.connect(_on_answer_received)
 
 func _on_answer_received(is_correct: bool):
 	var db = get_tree().get_first_node_in_group("dialogue")
+	if not db: return
 	
-	if is_correct:
-		db.start_dialogue(npc_name, ["Correct! You are getting better at this."] as Array[String])
+	if is_correct: 
+		db.start_dialogue(character_name, outro_dialogue)
 	else:
-		db.start_dialogue(npc_name, ["Incorrect. Try again!"] as Array[String])
-		# WAIT for the player to finish reading "Incorrect" before restarting
-		if not db.dialogue_finished.is_connected(trigger_quiz):
-			db.dialogue_finished.connect(trigger_quiz, CONNECT_ONE_SHOT)
+		db.start_dialogue(character_name, ["Lo siento, that isn't right."] as Array[String])
+		# Loop back to the quiz after they read the error message
+		db.dialogue_finished.connect(func(): _on_intro_finished(), CONNECT_ONE_SHOT)
+
+func _on_body_exited(body):
+	if body.name == "Player":
+		body.can_move = true
+		var db = get_tree().get_first_node_in_group("dialogue")
+		if db: db.hide()
