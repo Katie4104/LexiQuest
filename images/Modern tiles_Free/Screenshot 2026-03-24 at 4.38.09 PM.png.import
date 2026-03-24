@@ -2,24 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://cwi1p3xky81k7"
-=======
-uid="uid://bx2ymplcc01h0"
->>>>>>> ae8627dcd26b55b192a214fde4b5d7d5d85872a1
-path="res://.godot/imported/Screenshot 2026-03-18 at 12.55.02 PM.png-54729215839cb68d33e6319c28ab27c0.ctex"
-=======
-uid="uid://f81vac4l3xql"
-path="res://.godot/imported/splashBackgroun.png-b991cec727eff95b0a65b44cd171a932.ctex"
->>>>>>> origin/Testing
+uid="uid://divqwxq1kefrk"
+path="res://.godot/imported/Screenshot 2026-03-24 at 4.38.09 PM.png-f24969d2d5cd1867184d75830272ad99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/Modern tiles_Free/Interiors_free/16x16/Screenshot 2026-03-18 at 12.55.02 PM.png"
-dest_files=["res://.godot/imported/Screenshot 2026-03-18 at 12.55.02 PM.png-54729215839cb68d33e6319c28ab27c0.ctex"]
+source_file="res://images/Modern tiles_Free/Screenshot 2026-03-24 at 4.38.09 PM.png"
+dest_files=["res://.godot/imported/Screenshot 2026-03-24 at 4.38.09 PM.png-f24969d2d5cd1867184d75830272ad99.ctex"]
 
 [params]
 
