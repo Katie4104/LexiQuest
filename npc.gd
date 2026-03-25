@@ -43,6 +43,16 @@ func _on_answer_received(is_correct: bool):
 
 func _on_body_exited(body):
 	if body.name == "Player":
+<<<<<<< Updated upstream
 		body.can_move = true
 		var db = get_tree().get_first_node_in_group("dialogue")
 		if db: db.hide()
+=======
+		$CanvasLayer.visible = false
+
+func _process(delta):
+	if player_in_range and Input.is_action_just_pressed("ui_accept"):
+		# Call the DialogueBox node to show dialogue
+		var dialogue_box = get_node("/root/main/DialogueBox")  
+		dialogue_box.start_dialogue(dialogue_lines)
+>>>>>>> Stashed changes
