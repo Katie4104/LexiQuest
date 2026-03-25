@@ -3366,11 +3366,6 @@ shape = SubResource("CircleShape2D_5vw27")
 [node name="FrontDeskNPC" parent="." instance=ExtResource("8_5vw27")]
 position = Vector2(2, -50)
 
-<<<<<<< HEAD
-=======
-[node name="dialogue_box" parent="." instance=ExtResource("9_kek77")]
-
->>>>>>> origin/Testing
 [node name="DeskSecurityNPC" parent="." instance=ExtResource("8_5vw27")]
 position = Vector2(-169, -471)
 
@@ -3382,7 +3377,6 @@ position = Vector2(-32, -402)
 
 [node name="MetalDetectNPC2" parent="." instance=ExtResource("8_5vw27")]
 position = Vector2(33, -402)
-<<<<<<< HEAD
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -3396,5 +3390,4 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 0
-=======
->>>>>>> origin/Testing
+
