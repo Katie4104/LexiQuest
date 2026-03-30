@@ -1,9 +1,11 @@
-[gd_scene load_steps=41 format=3 uid="uid://bcpxu8picob4g"]
+[gd_scene load_steps=43 format=3 uid="uid://bcpxu8picob4g"]
 
-[ext_resource type="Script" uid="uid://cvannufw7afwa" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Script" uid="uid://bg552qvg71bso" path="res://npc.gd" id="1_xxcha"]
 [ext_resource type="Texture2D" uid="uid://dtfwqdn7c7yg1" path="res://images/used_images/Bob_idle_anim_16x16.png" id="2_kh24r"]
 [ext_resource type="Texture2D" uid="uid://bjtktik8dp616" path="res://images/used_images/Amelia_idle_anim_16x16.png" id="2_xxcha"]
 [ext_resource type="Texture2D" uid="uid://tfgbrcwj3c7i" path="res://images/used_images/Alex_phone_16x16.png" id="3_ul7y6"]
+[ext_resource type="AudioStream" uid="uid://b2mdhnnps526v" path="res://842513__pieshelpfuloven__triple_ping_notification_sound_mobile_optimized.wav" id="5_mcvl2"]
+[ext_resource type="AudioStream" uid="uid://bsd1n5u6h8p4o" path="res://528956__beetlemuse__wrong-answer-incorrect-error.wav" id="6_d61ma"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l64hl"]
 atlas = ExtResource("2_kh24r")
@@ -137,12 +139,7 @@ region = Rect2(16, 0, 16, 32)
 atlas = ExtResource("2_kh24r")
 region = Rect2(0, 0, 16, 32)
 
-<<<<<<< HEAD
-[sub_resource type="SpriteFrames" id="SpriteFrames_ul7y6"]
-resource_local_to_scene = true
-=======
 [sub_resource type="SpriteFrames" id="SpriteFrames_215dd"]
->>>>>>> origin/Testing
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -275,50 +272,31 @@ radius = 15.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_kh24r"]
 radius = 35.0
 
-<<<<<<< HEAD
 [node name="npc" type="CharacterBody2D"]
 script = ExtResource("1_xxcha")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-sprite_frames = SubResource("SpriteFrames_ul7y6")
+sprite_frames = SubResource("SpriteFrames_215dd")
 animation = &"desk_security1_idle"
 
-[node name="PhysicalCollision" type="CollisionShape2D" parent="."]
+[node name="physical_area" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("CircleShape2D_xxcha")
 
 [node name="Area2D" type="Area2D" parent="."]
 unique_name_in_owner = true
 
-[node name="DialogueTrigger" type="CollisionShape2D" parent="Area2D"]
+[node name="dialogue_area" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_kh24r")
+
+[node name="SuccessPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_mcvl2")
+volume_db = -5.0
+
+[node name="FailPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_d61ma")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_body_exited"]
-=======
-[node name="Node2D" type="Node2D"]
-
-[node name="npc" type="CharacterBody2D" parent="."]
-script = ExtResource("1_xxcha")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="npc"]
-unique_name_in_owner = true
-sprite_frames = SubResource("SpriteFrames_215dd")
-animation = &"desk_security1_idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="npc"]
-position = Vector2(0, 3)
-shape = SubResource("CircleShape2D_xxcha")
-
-[node name="Area2D" type="Area2D" parent="npc"]
-unique_name_in_owner = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="npc/Area2D"]
-position = Vector2(0, 4)
-shape = SubResource("CircleShape2D_kh24r")
-
-[connection signal="body_entered" from="npc/Area2D" to="npc" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="npc/Area2D" to="npc" method="_on_area_2d_body_exited"]
->>>>>>> origin/Testing
