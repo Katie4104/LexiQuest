@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=4 uid="uid://yw28g16pqwmf"]
+[gd_scene load_steps=71 format=4 uid="uid://yw28g16pqwmf"]
 
 [ext_resource type="Texture2D" uid="uid://b8pt4y83a2j6u" path="res://images/used_images/Room_Builder_free_16x16.png" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://cd2gwp48i17be" path="res://images/used_images/EnvironmentObjectsTileSheet.png" id="2_lquwl"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://g87sgqhp1mo5" path="res://player.gd" id="5_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bcpxu8picob4g" path="res://npc.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://bka6y545ft0tx" path="res://db1.tscn" id="9_kek77"]
+[ext_resource type="AudioStream" uid="uid://du7aaauwbdl7x" path="res://assets/520937__mrthenoronha__8-bit-game-intro-loop.wav" id="10_4c57u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dg77c"]
 texture = ExtResource("4_kek77")
@@ -5543,5 +5544,9 @@ character_name = "Waiter"
 [node name="dialogue" type="CanvasLayer" parent="."]
 
 [node name="db1" parent="dialogue" groups=["dialogue"] instance=ExtResource("9_kek77")]
-visible = false
 offset_top = -141.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_4c57u")
+volume_db = -20.0
+autoplay = true
