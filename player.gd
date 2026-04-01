@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var speed: float = 200.0
 
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var camera: Camera2D = $Camera2D # Get the camera child
 
 var can_move : bool = true
@@ -39,7 +39,7 @@ func update_animation(dir: Vector2):
 	if dir == Vector2.ZERO:
 		sprite.play("idle_" + last_direction)
 		return
-
+   
 	if abs(dir.x) > abs(dir.y):
 		if dir.x > 0:
 			sprite.play("walk_right")
