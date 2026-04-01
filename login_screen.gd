@@ -1,82 +1,87 @@
 extends Control
 
-const NEXT_SCENE = "res://main.tscn"
-const ACCOUNTS_FILE = "user://accounts.json"
+const REGISTER_SCENE := "res://register_screen.tscn"
+const MAIN_SCENE := "res://main.tscn"
+const ACCOUNTS_FILE := "user://accounts.json"
 
-@onready var user_edit = $NinePatchRect/VBoxContainer/userEdit
-@onready var password_edit = $NinePatchRect/VBoxContainer/PasswordEdit
-@onready var login_button = $NinePatchRect/VBoxContainer/CenterContainer/loginButton
-@onready var create_account_button = $NinePatchRect/VBoxContainer/CenterContainer2/createAccountButton
+@onready var username_edit = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/UsernameEdit
+@onready var password_edit = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/PasswordEdit
+@onready var message_label = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/messageLabel
+@onready var login_button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonsRow/LoginButton
+@onready var register_button = $CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ButtonsRow/RegisterButton
+
 
 func _ready() -> void:
-	# Connect buttons in code so we avoid duplicate signal-function problems.
 	if not login_button.pressed.is_connected(login_pressed):
 		login_button.pressed.connect(login_pressed)
 
-	if not create_account_button.pressed.is_connected(create_account_pressed):
-		create_account_button.pressed.connect(create_account_pressed)
+	if not register_button.pressed.is_connected(go_to_register):
+		register_button.pressed.connect(go_to_register)
 
-	print("Login screen ready")
+	hide_message()
+
 
 func login_pressed() -> void:
-	print("LOGIN BUTTON CLICKED")
-
-	var username = user_edit.text.strip_edges()
+	var username = username_edit.text.strip_edges()
 	var password = password_edit.text
 
-	if username == "" or password == "":
-		print("Please enter username and password")
+	if username.is_empty() or password.is_empty():
+		show_message("Please enter username and password.")
 		return
 
-	var data = load_accounts()
+	var accounts := load_accounts()
 
-	for user in data["users"]:
-		if user["username"] == username and user["password"] == password:
-			print("Login successful")
-			get_tree().change_scene_to_file(NEXT_SCENE)
-			return
+	if not accounts.has(username):
+		show_message("Invalid username or password.")
+		return
 
-	print("Invalid username or password")
+	if accounts[username] != password:
+		show_message("Invalid username or password.")
+		return
 
-func create_account_pressed() -> void:
-	print("CREATE ACCOUNT BUTTON CLICKED")
-	get_tree().change_scene_to_file("res://register_screen.tscn")
+	hide_message()
+	print("Login successful for: ", username)
+	get_tree().change_scene_to_file(MAIN_SCENE)
+
+
+func go_to_register() -> void:
+	hide_message()
+	get_tree().change_scene_to_file(REGISTER_SCENE)
+
+
+func show_message(text: String) -> void:
+	message_label.text = text
+	message_label.visible = true
+
+
+func hide_message() -> void:
+	message_label.text = ""
+	message_label.visible = false
 
 
 func load_accounts() -> Dictionary:
 	if not FileAccess.file_exists(ACCOUNTS_FILE):
-		return {"users": []}
+		return {}
 
-	var file = FileAccess.open(ACCOUNTS_FILE, FileAccess.READ)
+	var file := FileAccess.open(ACCOUNTS_FILE, FileAccess.READ)
 	if file == null:
-		print("Could not open accounts file for reading")
-		return {"users": []}
+		return {}
 
-	var content = file.get_as_text()
+	var content := file.get_as_text()
 	file.close()
 
-	if content.strip_edges() == "":
-		return {"users": []}
+	if content.strip_edges().is_empty():
+		return {}
 
-	var json = JSON.new()
-	var result = json.parse(content)
+	var json := JSON.new()
+	var result := json.parse(content)
 
 	if result != OK:
-		print("Failed to parse accounts.json")
-		return {"users": []}
+		return {}
 
 	var data = json.data
+	if typeof(data) == TYPE_DICTIONARY:
+		return data
 
-	if typeof(data) != TYPE_DICTIONARY:
-		return {"users": []}
-
-	if not data.has("users"):
-		data["users"] = []
-
-	return data
+	return {}
 	
-func _on_login_button_pressed() -> void:
-	pass # Replace with function body.
-
-func _on_create_account_button_pressed() -> void:
-	pass # Replace with function body.

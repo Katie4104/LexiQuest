@@ -17,6 +17,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="LexiQuest"
 run/main_scene="uid://dn300yun1kxte"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/show_image=false
+boot_splash/image="uid://bluj24lie2cqj"
 config/icon="res://images/icon.svg"
 
 [autoload]

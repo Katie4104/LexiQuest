@@ -1,6 +1,7 @@
 extends AnimatedSprite2D
-var speed = 120.0
+var speed = 80.0
+
 func _ready():
-	play("default")
+	play("walk")
 func _process(delta):
 	position.x += speed * delta
