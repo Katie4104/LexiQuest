@@ -19,61 +19,61 @@ Key features include:
   JSON-based data storage for user accounts and progress  
 
   Pixel-art inspired user interface 
-      
+	  
 
 Libraries, Tools, and Frameworks Used 
 
-        Game Engine: Godot 4.5  
+		Game Engine: Godot 4.5  
 
-        Programming Language: GDScript  
+		Programming Language: GDScript  
 
-        Data Storage: JSON (for user data and progress tracking)  
+		Data Storage: JSON (for user data and progress tracking)  
 
-        Version Control: Git & GitHub  
+		Version Control: Git & GitHub  
 
-        Development Tools: Visual Studio Code 
+		Development Tools: Visual Studio Code 
 
  
  Steps to Install and Run the Project 
 
-    1. Clone the Repository 
+	1. Clone the Repository 
 
-    git clone https://github.com/your-username/lexiquest.git 
+	git clone https://github.com/your-username/lexiquest.git 
 
-    cd lexiquest 
+	cd lexiquest 
 
-    2. Install Godot 
+	2. Install Godot 
 
-    Download and install Godot Engine version 4.5 from the official website. 
+	Download and install Godot Engine version 4.5 from the official website. 
 
-     Note: Using a different version may cause compatibility issues. 
+	 Note: Using a different version may cause compatibility issues. 
 
-    3. Open the Project 
+	3. Open the Project 
 
-    Launch Godot  
+	Launch Godot  
 
-    Select Import Project  
+	Select Import Project  
 
-    Navigate to the cloned repository folder  
+	Navigate to the cloned repository folder  
 
-    Open the project.godot file 
+	Open the project.godot file 
 
-    4. Run the Application 
+	4. Run the Application 
 
-    Open the main scene (e.g., splash.tscn or main.tscn)  
+	Open the main scene (e.g., splash.tscn or main.tscn)  
 
-    Click the Run Project button 
+	Click the Run Project button 
 
-          /scenes        → Game scenes (login, register, menu, levels) 
+		  /scenes        → Game scenes (login, register, menu, levels) 
 
-          /scripts       → GDScript files for logic 
+		  /scripts       → GDScript files for logic 
 
-          /assets or /addons      → Images, sprites, UI elements 
+		  /assets or /addons      → Images, sprites, UI elements 
 
-          /data          → JSON files for storing user data 
+		  /data          → JSON files for storing user data 
 
  Team Members 
 
-    https://github.com/Katie4104 
+	https://github.com/Katie4104 
 
-    griseldaguevara25-bit 
+	griseldaguevara25-bit 
