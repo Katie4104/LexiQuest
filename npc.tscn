@@ -1,9 +1,9 @@
 [gd_scene load_steps=43 format=3 uid="uid://bcpxu8picob4g"]
 
-[ext_resource type="Script" uid="uid://bg552qvg71bso" path="res://npc.gd" id="1_xxcha"]
-[ext_resource type="Texture2D" uid="uid://dtfwqdn7c7yg1" path="res://images/used_images/Bob_idle_anim_16x16.png" id="2_kh24r"]
-[ext_resource type="Texture2D" uid="uid://bjtktik8dp616" path="res://images/used_images/Amelia_idle_anim_16x16.png" id="2_xxcha"]
-[ext_resource type="Texture2D" uid="uid://tfgbrcwj3c7i" path="res://images/used_images/Alex_phone_16x16.png" id="3_ul7y6"]
+[ext_resource type="Script" uid="uid://cvannufw7afwa" path="res://npc.gd" id="1_xxcha"]
+[ext_resource type="Texture2D" uid="uid://ck72lvx1kj5e6" path="res://images/used_images/Bob_idle_anim_16x16.png" id="2_kh24r"]
+[ext_resource type="Texture2D" uid="uid://dle080b72qj7e" path="res://images/used_images/Amelia_idle_anim_16x16.png" id="2_xxcha"]
+[ext_resource type="Texture2D" uid="uid://cxaedplydrijx" path="res://images/used_images/Alex_phone_16x16.png" id="3_ul7y6"]
 [ext_resource type="AudioStream" uid="uid://b2mdhnnps526v" path="res://842513__pieshelpfuloven__triple_ping_notification_sound_mobile_optimized.wav" id="5_mcvl2"]
 [ext_resource type="AudioStream" uid="uid://bsd1n5u6h8p4o" path="res://528956__beetlemuse__wrong-answer-incorrect-error.wav" id="6_d61ma"]
 
@@ -270,7 +270,7 @@ animations = [{
 radius = 15.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_kh24r"]
-radius = 35.0
+radius = 40.0
 
 [node name="npc" type="CharacterBody2D"]
 script = ExtResource("1_xxcha")
