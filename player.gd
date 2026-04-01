@@ -25,25 +25,16 @@ func _ready():
 
 func _physics_process(delta):
 	if can_move:
-		var dir := Vector2.ZERO
-		# Movement input
-		if Input.is_action_pressed("ui_right"):
-			dir.x += 1
-		if Input.is_action_pressed("ui_left"):
-			dir.x -= 1
-		if Input.is_action_pressed("ui_down"):
-			dir.y += 1
-		if Input.is_action_pressed("ui_up"):
-			dir.y -= 1
-
-		dir = dir.normalized()
+		# get_vector handles left, right, up, down and normalizes diagonal speed
+		var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+		
 		velocity = dir * speed
 		move_and_slide()
 		update_animation(dir)
 	else:
 		velocity = Vector2.ZERO
 		move_and_slide()
-
+		
 func update_animation(dir: Vector2):
 	if dir == Vector2.ZERO:
 		sprite.play("idle_" + last_direction)
