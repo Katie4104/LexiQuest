@@ -77,3 +77,11 @@ Libraries, Tools, and Frameworks Used
     https://github.com/Katie4104 
 
     griseldaguevara25-bit 
+
+Credits
+
+    Music: "8 Bit Game Intro Loop"
+    By: Mrthenoronha
+    Source: Freesound.org
+    License: CC BY-NC 4.0
+    Used for educational purposes in LexiQuest.
